@@ -12,7 +12,7 @@ const urlSchema = z.string().url();
 const app = express();
 
  const corsOptions = {
-   origin: 'https://link-shorter-front-seven.vercel.app/',
+   origin: process.env.ORIGINAL,
    optionsSuccessStatus: 200,
  };
 
