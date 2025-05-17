@@ -1,11 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon --exec tsx --env-file .env ./server.ts",
     "buid": "tsc ./src/server.ts && npm i",
-    "start": "node run server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
