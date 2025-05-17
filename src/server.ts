@@ -3,8 +3,8 @@ import { z } from 'zod';
 import express from 'express';
 import cors from 'cors'
 
-import { accessOriginalLink, getShortLink } from './src/models/getUserLink';
-import { prisma } from './src/configs/prisma';
+import { accessOriginalLink, getShortLink } from './models/getUserLink';
+import { prisma } from './configs/prisma';
 
 
 const urlSchema = z.string().url();

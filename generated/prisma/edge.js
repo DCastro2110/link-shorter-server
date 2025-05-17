@@ -158,8 +158,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Link {\n  id            String @id @default(nanoid(10))\n  original_link String\n}\n",
-  "inlineSchemaHash": "4106f5ac2ffd4b364e3c12c5d2945a0b9a03543891daab1fdd13eb12b51f8522",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider  = \"postgresql\"\n  url       = env(\"DATABASE_URL\")\n  directUrl = env(\"DIRECT_URL\")\n}\n\nmodel Link {\n  id            String @id @default(nanoid(10))\n  original_link String\n}\n",
+  "inlineSchemaHash": "af97cea533c18bc5d5f90bc9124bfaa236f9bd683cccc21b6a2d8dc08abab0ed",
   "copyEngine": true
 }
 config.dirname = '/'
