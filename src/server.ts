@@ -64,7 +64,7 @@ app.post("/api", async (req, res) => {
     
 })
 
-app.listen(3001, async () => {
+app.listen(process.env.PORT, async () => {
     console.log("Is running!");
     try {
         await prisma.$connect();
