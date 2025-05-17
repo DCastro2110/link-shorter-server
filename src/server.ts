@@ -11,7 +11,12 @@ const urlSchema = z.string().url();
 
 const app = express();
 
-app.use(cors());
+ const corsOptions = {
+   origin: 'https://link-shorter-front-seven.vercel.app/',
+   optionsSuccessStatus: 200,
+ };
+
+ app.use(cors(corsOptions));
 
 app.get("/:id", async (req, res) => {
     const id = req.params.id
