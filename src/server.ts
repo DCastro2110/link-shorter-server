@@ -13,7 +13,7 @@ const app = express();
 
  const corsOptions = {
    origin: process.env.ORIGINAL,
-   optionsSuccessStatus: 200,
+   credentials: true
  };
 
  app.use(cors(corsOptions));
