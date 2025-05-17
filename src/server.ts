@@ -52,7 +52,7 @@ app.post("/api", async (req, res) => {
 
     try {
         const data = await getShortLink(result.data)
-        const url = `http://${hostWithoutDomain.join()}:${process.env.PORT}/${data.id}`
+        const url = `${hostWithoutDomain.join()}/${data.id}`
     
         res.end(JSON.stringify({
             url
