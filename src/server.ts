@@ -30,7 +30,7 @@ app.get("/:id", async (req, res) => {
 })
 
 app.post("/api", async (req, res) => {
-    const host  = req.headers.host;
+    let host  = req.headers.host;
 
     if (!host) {
         res.writeHead(400, "Host not found")
@@ -38,8 +38,7 @@ app.post("/api", async (req, res) => {
         return;
     }
 
-    const hostWithoutDomain = String(host).split(".");
-    hostWithoutDomain.pop();
+    host = host.replace(",", ".");
 
 
     const originalUrl = req.query.q
@@ -53,7 +52,7 @@ app.post("/api", async (req, res) => {
 
     try {
         const data = await getShortLink(result.data)
-        const url = `${hostWithoutDomain.join()}/${data.id}`
+        const url = `${host}/${data.id}`
     
         res.end(JSON.stringify({
             url
