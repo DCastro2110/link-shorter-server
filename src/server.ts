@@ -11,12 +11,7 @@ const urlSchema = z.string().url();
 
 const app = express();
 
- const corsOptions = {
-   origin: "*",
-   credentials: true
- };
-
- app.use(cors(corsOptions));
+app.use(cors());
 
 app.get("/:id", async (req, res) => {
     const id = req.params.id
