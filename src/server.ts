@@ -12,7 +12,7 @@ const urlSchema = z.string().url();
 const app = express();
 
  const corsOptions = {
-   origin: process.env.ORIGINAL,
+   origin: "*",
    credentials: true
  };
 
