@@ -30,6 +30,7 @@ app.get("/:id", async (req, res) => {
 })
 
 app.post("/api", async (req, res) => {
+    console.log("oi";)
     const host = process.env.HOST;
         
     if (!host) {
@@ -42,6 +43,7 @@ app.post("/api", async (req, res) => {
 
 
     const originalUrl = req.query.q
+    console.log(originalUrl)
     const result = urlSchema.safeParse(originalUrl);
 
     if(!result.success) {
