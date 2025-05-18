@@ -30,11 +30,11 @@ app.get("/:id", async (req, res) => {
 })
 
 app.post("/api", async (req, res) => {
-    console.log("oi")
-    const host = process.env.HOST;
-        
+    const host  = req.headers.host;
+
     if (!host) {
-        res.writeHead(400, "Error!")
+        res.writeHead(400, "Host not found")
+        res.end()
         return;
     }
 
@@ -43,7 +43,6 @@ app.post("/api", async (req, res) => {
 
 
     const originalUrl = req.query.q
-    console.log(originalUrl)
     const result = urlSchema.safeParse(originalUrl);
 
     if(!result.success) {
