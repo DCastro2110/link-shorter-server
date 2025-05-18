@@ -30,7 +30,7 @@ app.get("/:id", async (req, res) => {
 })
 
 app.post("/api", async (req, res) => {
-    console.log("oi";)
+    console.log("oi")
     const host = process.env.HOST;
         
     if (!host) {
